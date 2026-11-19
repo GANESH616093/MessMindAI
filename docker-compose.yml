@@ -1,0 +1,12 @@
+services:
+  messmind:
+    build: .
+    ports: ["8000:8000"]
+    environment:
+      MESSMIND_SECRET: ${MESSMIND_SECRET:?set MESSMIND_SECRET in .env}
+    volumes:
+      - messmind_db:/app/database
+      - messmind_models:/app/ml_models
+volumes:
+  messmind_db:
+  messmind_models:
