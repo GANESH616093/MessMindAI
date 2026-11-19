@@ -1,0 +1,12 @@
+# Render.com blueprint - one Docker web service (free tier works for demos; attach a disk for persistent data)
+services:
+  - type: web
+    name: messmind-ai
+    runtime: docker
+    plan: free
+    healthCheckPath: /api/health
+    envVars:
+      - key: MESSMIND_SECRET
+        generateValue: true
+      - key: MESSMIND_ENV
+        value: production
