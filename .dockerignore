@@ -1,0 +1,8 @@
+node_modules
+dist
+__pycache__
+*.pyc
+database/*.db
+ml_models/*.joblib
+.env
+.pytest_cache
